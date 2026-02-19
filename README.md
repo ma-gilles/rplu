@@ -1,6 +1,6 @@
 # RPLU
 
-This repository contains code to reproduce the result of "Low-Rank Approximation by Randomly Pivoted LU".
+This repository contains code to reproduce the results of [Low-Rank Approximation by Randomly Pivoted LU](https://arxiv.org/abs/2601.22344) by Marc Aurèle Gilles and Heather Wilber.
 
 
 ## 0) Installation
