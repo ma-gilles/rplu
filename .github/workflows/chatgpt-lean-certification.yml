@@ -1,0 +1,55 @@
+name: ChatGPT Lean certification
+
+on:
+  push:
+    branches:
+      - chatgpt/lean-certification
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lean-cert
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Materialize the single Lean source
+        shell: bash
+        run: |
+          printf '%s' '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' | base64 --decode | gzip --decompress > PsdCholeskyCertified.lean
+
+      - name: Reject placeholders and custom axioms
+        shell: bash
+        run: |
+          if grep -nE '(^|[^A-Za-z])(sorry|admit|axiom)([^A-Za-z]|$)' PsdCholeskyCertified.lean; then
+            echo 'Forbidden placeholder or custom axiom found.' >&2
+            exit 1
+          fi
+
+      - name: Install Elan
+        shell: bash
+        run: |
+          curl https://elan.lean-lang.org/elan-init.sh -sSf | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Fetch Mathlib and compiled cache
+        shell: bash
+        run: |
+          "$HOME/.elan/bin/lake" update
+          "$HOME/.elan/bin/lake" exe cache get
+
+      - name: Kernel-check the single file
+        shell: bash
+        run: "$HOME/.elan/bin/lake" env lean PsdCholeskyCertified.lean
+
+      - name: Upload checked source
+        uses: actions/upload-artifact@v4
+        with:
+          name: PsdCholeskyCertified
+          path: lean-cert/PsdCholeskyCertified.lean
+          if-no-files-found: error
